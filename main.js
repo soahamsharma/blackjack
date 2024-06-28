@@ -16,8 +16,13 @@ const deck = {
     },
     deal(n){
         pick = []
-        for(let i = 0; i<n; i++){
-            pick.push(this._cards.pop())
+        if (n < this._cards.length){
+            for(let i = 0; i<n; i++){
+                pick.push(this._cards.pop())
+            }
+        } else {
+            console.log(`The deck has only ${this._cards.length} cards left. Dealing ${this._cards.length} cards`)
+            pick = this._cards
         }
         return pick
     },
@@ -25,8 +30,12 @@ const deck = {
 
 deck.initialise()
 deck.shuffle()
-console.log(deck.deal(5))
-console.log(deck.deal(5))
-console.log(deck.deal(5))
-console.log(deck.deal(5))
 console.log(deck._cards)
+console.log(deck.deal(8))
+console.log(deck.deal(8))
+console.log(deck.deal(8))
+console.log(deck.deal(8))
+console.log(deck.deal(8))
+console.log(deck.deal(8))
+console.log(deck.deal(8))
+
